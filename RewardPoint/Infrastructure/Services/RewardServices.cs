@@ -8,7 +8,11 @@ namespace RewardPoint.Infrastructure.Services
     {
         private readonly ITransactionRepo _transactionRepo;
 
-        public RewardServices(ITransactionRepo trans) { _transactionRepo = trans; }
+        public RewardServices(ITransactionRepo trans) 
+        { 
+            _transactionRepo = trans;
+            _transactionRepo.InitTransaction();
+        }
         //Given the amount of money, it converts to the reward point
         public int ConvertReward(int totalAmount)
         {
@@ -45,16 +49,13 @@ namespace RewardPoint.Infrastructure.Services
                     //then add the money toward the element indexed by the corresponding month
                     if (month_diff < timeRange && month_diff > -1)
                     {
-                        output[month_diff].RewardPoint += Convert.ToInt16(elem.Quantity * elem.ItemPrice);
+                        //convert money from the transaction to points
+                        int point = ConvertReward(Convert.ToInt16(elem.Quantity * elem.ItemPrice));
+                        output[month_diff].RewardPoint += point;
+                        total += point;
                     }
                 }
-                //Convert all the money for each month to reward points
-                for(int i = 0; i < output.Count; i++)
-                {
-                    int month_reward = output[i].RewardPoint;
-                    output[i].RewardPoint = ConvertReward(month_reward);
-                    total += month_reward;
-                }
+
                 //total reward points at the end
                 output[output.Count - 1].RewardPoint = total;
             }

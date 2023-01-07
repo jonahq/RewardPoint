@@ -25,6 +25,50 @@ namespace RewardPoint.Infrastructure.Repositories
                 UserDict.Add(key, new List<TransactionModel>() { tmod });
             }
         }
+        //Add some default transaction
+        public void InitTransaction()
+        {
+            AddTransaction(new TransactionModel()
+            {
+                Date = new DateTime(2023, 01, 02),
+                Quantity = 1,
+                ItemId = 10,
+                ItemPrice = 30,
+                UserId = 1
+            });
+            AddTransaction(new TransactionModel()
+            {
+                Date = new DateTime(2022, 11, 12),
+                Quantity = 2,
+                ItemId = 4,
+                ItemPrice = 50,
+                UserId = 1
+            });
+            AddTransaction(new TransactionModel()
+            {
+                Date = new DateTime(2022, 12, 02),
+                Quantity = 1,
+                ItemId = 8,
+                ItemPrice = 120,
+                UserId = 1
+            });
+            AddTransaction(new TransactionModel()
+            {
+                Date = new DateTime(2022, 10, 02),
+                Quantity = 1,
+                ItemId = 10,
+                ItemPrice = 300,
+                UserId = 1
+            });
+            AddTransaction(new TransactionModel()
+            {
+                Date = new DateTime(2022, 10, 02),
+                Quantity = 1,
+                ItemId = 10,
+                ItemPrice = 300,
+                UserId = 3
+            });
+        }
         public Dictionary<int, List<TransactionModel>> getTransRecord() 
         {
             return UserDict;

@@ -11,6 +11,8 @@ namespace RewardPoint.Core.Repositories
         //Add one transaction record, since we don't use the database just for
         //this assessment
         public void AddTransaction(TransactionModel tmod);
+        //initialize with some default value
+        public void InitTransaction();
         //Get all transaction records
         public Dictionary<int, List<TransactionModel>> getTransRecord();
     }
