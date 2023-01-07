@@ -5,9 +5,8 @@ namespace RewardPoint.Core.Models
     {
         public int UserId { get; set; }
         public DateTime Date { get; set; }
-        public int ItemId { get; set; }
-        public double ItemPrice { get; set; }
-        public int Quantity { get; set; }
+        public int TransactionId { get; set; }
+        public double ItemPrices { get; set; }
 
     }
 

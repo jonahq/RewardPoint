@@ -31,41 +31,36 @@ namespace RewardPoint.Infrastructure.Repositories
             AddTransaction(new TransactionModel()
             {
                 Date = new DateTime(2023, 01, 02),
-                Quantity = 1,
-                ItemId = 10,
-                ItemPrice = 30,
+                TransactionId = 10,
+                ItemPrices = 30,
                 UserId = 1
             });
             AddTransaction(new TransactionModel()
             {
                 Date = new DateTime(2022, 11, 12),
-                Quantity = 2,
-                ItemId = 4,
-                ItemPrice = 50,
+                TransactionId = 4,
+                ItemPrices = 100,
                 UserId = 1
             });
             AddTransaction(new TransactionModel()
             {
                 Date = new DateTime(2022, 12, 02),
-                Quantity = 1,
-                ItemId = 8,
-                ItemPrice = 120,
+                TransactionId = 8,
+                ItemPrices = 120,
                 UserId = 1
             });
             AddTransaction(new TransactionModel()
             {
                 Date = new DateTime(2022, 10, 02),
-                Quantity = 1,
-                ItemId = 10,
-                ItemPrice = 300,
+                TransactionId = 1,
+                ItemPrices = 300,
                 UserId = 1
             });
             AddTransaction(new TransactionModel()
             {
-                Date = new DateTime(2022, 10, 02),
-                Quantity = 1,
-                ItemId = 10,
-                ItemPrice = 300,
+                Date = new DateTime(2022, 12, 02),
+                TransactionId = 13,
+                ItemPrices = 300,
                 UserId = 3
             });
         }

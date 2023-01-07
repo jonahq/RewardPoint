@@ -49,13 +49,12 @@ namespace RewardPoint.Infrastructure.Services
                     //then add the money toward the element indexed by the corresponding month
                     if (month_diff < timeRange && month_diff > -1)
                     {
-                        //convert money from the transaction to points
-                        int point = ConvertReward(Convert.ToInt16(elem.Quantity * elem.ItemPrice));
+                        //convert money to points
+                        int point = ConvertReward(Convert.ToInt16(elem.ItemPrices));
                         output[month_diff].RewardPoint += point;
                         total += point;
                     }
                 }
-
                 //total reward points at the end
                 output[output.Count - 1].RewardPoint = total;
             }
