@@ -4,7 +4,7 @@ using RewardPoint.Core.Repositories;
 using RewardPoint.Infrastructure.Repositories;
 
 var builder = WebApplication.CreateBuilder(args);
-
+//Dependency Injections
 builder.Services.AddScoped<ITransactionRepo, TransactionRepo>();
 builder.Services.AddScoped<IRewardService, RewardServices>();
 

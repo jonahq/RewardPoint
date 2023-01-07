@@ -1,5 +1,6 @@
 namespace RewardPoint.Core.Models
 {
+    //object for the record of transaction
     public class TransactionModel
     {
         public int UserId { get; set; }
